@@ -1,0 +1,63 @@
+﻿@model Login_user.Models.UserLogin
+@using static Login_user.Controllers.HomeController
+
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<h4>UserLogin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div>
+          
+            @TempData["dataFailed"]
+        </div>
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gmail" class="control-label"></label>
+                <input asp-for="Gmail" class="form-control" />
+                <span asp-validation-for="Gmail" class="text-danger"></span>
+            </div>
+           @*  <div class="form-group">
+                <label class="form-lable">Select Gender</label>
+                <select name="gender" asp-items="@ViewBag.gender">
+                    <option value="">select gender</option>
+                </select>
+
+                @* @Html.DropDownList("gender",
+                Html.GetEnumSelectList<gender>(),"select gender",new{@class="form-control"}
+                ) *@
+
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <p>You are alredy register  <a asp-action="Login">Login</a> </p>
+   
+</div>
+
